@@ -5,29 +5,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerInputActions inputAction;
-    InputAction move;
-    Vector2 direction = Vector2.zero;
+    private PlayerInputActions inputAction;
+    private InputAction move;
+    private Vector2 direction = Vector2.zero;
     [SerializeField] float speed = 1f;
-    // Start is called before the first frame update
+
     private void Awake()
     {
-        inputAction = new PlayerInputActions();
+        move = new PlayerInputActions().playercontrol.movement;
     }
     private void OnEnable()
-    {
-        move = inputAction.playercontrol.movement;
+    {       
         move.Enable();
-
     }
     private void OnDisable()
     {
         move.Disable();
     }
-    void Start()
-    {
-        
-    }
+
     private void FixedUpdate()
     {
         Move();
@@ -35,12 +30,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(direction.x * speed, transform.position.y, direction.y * speed);
+        transform.Translate(direction.x * speed, 0, direction.y * speed);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         direction = move.ReadValue<Vector2>();
+        direction.Normalize();
     }
 }
