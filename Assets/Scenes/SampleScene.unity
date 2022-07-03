@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f511ed58e4bcdb48b239c01d8467001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 1
+  rateOfFire: 10
   missileSpawnPoint: {fileID: 1785864819}
   missile: {fileID: 638051617942028232, guid: cf0d7b9bf93207d439267dc980cf6b9a, type: 3}
   speed: 0.3

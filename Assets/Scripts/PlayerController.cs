@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Fire();
     }
 
     private void Update()
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
         direction.Normalize();
 
         isFiring = fire.ReadValue<float>() > 0.1f;
+        Fire();
     }
 
     private void OnDisable()
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.time> nextShot)
             {
-                nextShot = Time.time + rateOfFire;
+                if(rateOfFire!= 0) nextShot = Time.time + 1/rateOfFire;
                 Instantiate(missile, missileSpawnPoint.position, Quaternion.identity);
             }
         }       
