@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float rateOfFire = 1f;
+    [SerializeField] Transform missileSpawnPoint;
+    [SerializeField] GameObject missile;
 
-    // Update is called once per frame
-    void Update()
+    private float nextShot = 0;
+
+    public void Fire(bool isFiring)
     {
-        
+        if (isFiring)
+        {
+            if (Time.time > nextShot)
+            {
+                nextShot = Time.time + rateOfFire;
+                Instantiate(missile, missileSpawnPoint.position, Quaternion.identity);
+            }
+        }
     }
 }

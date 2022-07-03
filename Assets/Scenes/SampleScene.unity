@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 1991229001}
   - component: {fileID: 1991229000}
   - component: {fileID: 1991229002}
+  - component: {fileID: 1991229003}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -359,9 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f511ed58e4bcdb48b239c01d8467001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 1
-  missileSpawnPoint: {fileID: 1785864819}
-  missile: {fileID: 638051617942028232, guid: cf0d7b9bf93207d439267dc980cf6b9a, type: 3}
 --- !u!4 &1991229001
 Transform:
   m_ObjectHideFlags: 0
@@ -391,6 +389,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
+--- !u!114 &1991229003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991228999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea80a7654a87c9b4f9d961b431a3fa35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 1
+  missileSpawnPoint: {fileID: 1785864819}
+  missile: {fileID: 638051617942028232, guid: cf0d7b9bf93207d439267dc980cf6b9a, type: 3}
 --- !u!1001 &2056768361
 PrefabInstance:
   m_ObjectHideFlags: 0
