@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rateOfFire = 1f;
     [SerializeField] Transform missileSpawnPoint;
     [SerializeField] GameObject missile;
-
+    [SerializeField] float speed = 0.01f;
 
     private ControlActions controlAction;
     private InputAction move;
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction = Vector2.zero;
     private bool isFiring = false;
     private float nextShot = 0;
-    private Mover mover;
     
     
     private void Awake()
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
         controlAction = new ControlActions();
         move = controlAction.player.movement;
         fire = controlAction.player.fire;
-        mover = GetComponent<Mover>();
     }
 
     private void OnEnable()
@@ -35,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        mover.Move(direction);
+        Move();
         Fire();
     }
 
@@ -51,6 +49,11 @@ public class PlayerController : MonoBehaviour
     {
         move.Disable();
         fire.Disable();
+    }
+
+    public void Move()
+    {
+        transform.Translate(direction.x * speed, 0, direction.y * speed);
     }
 
     private void Fire()
