@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
 
-    private PlayerInputActions inputAction;
+    private ControlActions controlAction;
     private InputAction move;
     private Vector2 direction = Vector2.zero;
     
     private void Awake()
     {
-        move = new PlayerInputActions().playercontrol.movement;
+        move = new ControlActions().player.movement;
     }
 
     private void OnEnable()
