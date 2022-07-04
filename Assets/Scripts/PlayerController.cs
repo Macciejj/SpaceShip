@@ -31,15 +31,11 @@ public class PlayerController : MonoBehaviour
         fire.Enable();
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
-
     private void Update()
     {
         direction = move.ReadValue<Vector2>();
         direction.Normalize();
+        Move();
 
         isFiring = fire.ReadValue<float>() > 0.1f;
         Fire();
@@ -53,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(direction.x * speed, 0, direction.y * speed);
+        transform.Translate(direction.x * speed * Time.deltaTime, 0, direction.y * speed * Time.deltaTime);
     }
 
     private void Fire()

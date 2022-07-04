@@ -8,7 +8,7 @@ public class MissileMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(0, 0, speed);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
     private void OnBecameInvisible()
     {
