@@ -34,16 +34,9 @@ public class PlayerController : MonoBehaviour
         fire = controlAction.player.fire;
 
         cameraToPlayerDistance = Vector3.Distance(transform.position, camera.transform.position);
-        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
-        //// minScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
-        print(minScreenBounds);
-        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
-        // //print(maxScreenBounds);
-    }
 
-    private void Start()
-    {
-       
+        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
+        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
     }
 
     private void OnEnable()
@@ -70,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-
         moveVector = new Vector3(direction.x * speed * Time.deltaTime, 0, direction.y * speed * Time.deltaTime);
         nextPosition = transform.position + moveVector;
         if (nextPosition.x < minScreenBounds.x || nextPosition.x > maxScreenBounds.x)
@@ -82,7 +74,6 @@ public class PlayerController : MonoBehaviour
             moveVector.z = 0;
         }
         transform.Translate(moveVector);
-
     }
 
     private void Fire()
