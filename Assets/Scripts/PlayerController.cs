@@ -15,30 +15,35 @@ public class PlayerController : MonoBehaviour
     private InputAction fire;
     private Vector2 direction = Vector2.zero;
     private Vector3 moveVector = Vector2.zero;
-    private Vector2 nextPosition = Vector2.zero;
+    private Vector3 nextPosition = Vector2.zero;
     private bool isFiring = false;
     private float nextShot = 0;
 
-    Vector2 minScreenBounds;
-    Vector2 maxScreenBounds;
+    Vector3 minScreenBounds;
+    Vector3 maxScreenBounds;
+    float cameraToPlayerDistance;
 
+    [SerializeField] Camera camera;
 
 
     private void Awake()
     {
+        
         controlAction = new ControlActions();
         move = controlAction.player.movement;
         fire = controlAction.player.fire;
-        
+
+        cameraToPlayerDistance = Vector3.Distance(transform.position, camera.transform.position);
+        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
+        //// minScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
+        print(minScreenBounds);
+        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
+        // //print(maxScreenBounds);
     }
 
     private void Start()
     {
-        
-        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
-        print(minScreenBounds.x);
-        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        print(maxScreenBounds.x);
+       
     }
 
     private void OnEnable()
@@ -65,14 +70,14 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
+
         moveVector = new Vector3(direction.x * speed * Time.deltaTime, 0, direction.y * speed * Time.deltaTime);
         nextPosition = transform.position + moveVector;
         if (nextPosition.x < minScreenBounds.x || nextPosition.x > maxScreenBounds.x)
         {
-            //print(nextPosition.x + " " + maxScreenBounds.x);
             moveVector.x = 0;
         }
-        if (nextPosition.y < minScreenBounds.y || nextPosition.y > maxScreenBounds.y)
+        if (nextPosition.z < minScreenBounds.z || nextPosition.z > maxScreenBounds.z)
         {
             moveVector.z = 0;
         }
