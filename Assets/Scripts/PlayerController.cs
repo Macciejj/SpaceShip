@@ -8,49 +8,35 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rateOfFire = 1f;
     [SerializeField] Transform missileSpawnPoint;
     [SerializeField] GameObject missile;
-    [SerializeField] float speed = 0.01f;
-
+    [SerializeField] float speed = 20;
+    
     private ControlActions controlAction;
+
     private InputAction move;
     private InputAction fire;
-    private Vector2 direction = Vector2.zero;
-    private Vector3 moveVector = Vector2.zero;
-    private Vector3 nextPosition = Vector2.zero;
+
     private bool isFiring = false;
     private float nextShot = 0;
 
-    Vector3 minScreenBounds;
-    Vector3 maxScreenBounds;
-    float cameraToPlayerDistance;
-
-    [SerializeField] Camera camera;
-
+    private Mover mover;
 
     private void Awake()
     {
-        
         controlAction = new ControlActions();
         move = controlAction.player.movement;
         fire = controlAction.player.fire;
-
-        cameraToPlayerDistance = Vector3.Distance(transform.position, camera.transform.position);
-
-        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
-        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
+        mover = new Mover(transform, speed);
     }
 
     private void OnEnable()
-    {       
+    {   
         move.Enable();
         fire.Enable();
     }
 
     private void Update()
     {
-        direction = move.ReadValue<Vector2>();
-        direction.Normalize();
-        Move();
-
+        mover.Move(move.ReadValue<Vector2>());
         isFiring = fire.ReadValue<float>() > 0.1f;
         Fire();
     }
@@ -60,22 +46,7 @@ public class PlayerController : MonoBehaviour
         move.Disable();
         fire.Disable();
     }
-
-    public void Move()
-    {
-        moveVector = new Vector3(direction.x * speed * Time.deltaTime, 0, direction.y * speed * Time.deltaTime);
-        nextPosition = transform.position + moveVector;
-        if (nextPosition.x < minScreenBounds.x || nextPosition.x > maxScreenBounds.x)
-        {
-            moveVector.x = 0;
-        }
-        if (nextPosition.z < minScreenBounds.z || nextPosition.z > maxScreenBounds.z)
-        {
-            moveVector.z = 0;
-        }
-        transform.Translate(moveVector);
-    }
-
+   
     private void Fire()
     {
         if(isFiring)
