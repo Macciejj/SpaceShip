@@ -20,7 +20,7 @@ public class Mover
         this.speed = speed;
 
         camera = Camera.main;
-        cameraToPlayerDistance = Vector3.Distance(transform.position, camera.transform.position);
+        cameraToPlayerDistance = Vector3.Distance(Vector3.zero, camera.transform.position);
         minScreenBounds = camera.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
         maxScreenBounds = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
     }

@@ -5,9 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float rateOfFire = 1f;
-    [SerializeField] Transform missileSpawnPoint;
-    [SerializeField] GameObject missile;
     [SerializeField] float speed = 20;
     
     private ControlActions controlAction;
@@ -15,10 +12,8 @@ public class PlayerController : MonoBehaviour
     private InputAction move;
     private InputAction fire;
 
-    private bool isFiring = false;
-    private float nextShot = 0;
-
     private Mover mover;
+    private Shooter shooter;
 
     private void Awake()
     {
@@ -26,6 +21,7 @@ public class PlayerController : MonoBehaviour
         move = controlAction.player.movement;
         fire = controlAction.player.fire;
         mover = new Mover(transform, speed);
+        shooter = GetComponent<Shooter>();
     }
 
     private void OnEnable()
@@ -37,8 +33,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         mover.Move(move.ReadValue<Vector2>());
-        isFiring = fire.ReadValue<float>() > 0.1f;
-        Fire();
+        shooter.Fire(fire.ReadValue<float>() > 0.1f);
     }
 
     private void OnDisable()
@@ -46,18 +41,5 @@ public class PlayerController : MonoBehaviour
         move.Disable();
         fire.Disable();
     }
-   
-    private void Fire()
-    {
-        if(isFiring)
-        {
-            if (Time.time> nextShot)
-            {
-                if(rateOfFire!= 0) nextShot = Time.time + 1/rateOfFire;
-                Instantiate(missile, missileSpawnPoint.position, Quaternion.identity);
-            }
-        }       
-    }
-
-   
+    
 }
