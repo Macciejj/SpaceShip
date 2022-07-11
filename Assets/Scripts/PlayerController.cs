@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 20;
-    
+
     private ControlActions controlAction;
 
     private InputAction move;
