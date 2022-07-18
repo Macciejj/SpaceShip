@@ -13,6 +13,7 @@ public class Stats : MonoBehaviour
         if(missileMover != null)
         {
             TakeDamage(missileMover.GetDamage());
+            Destroy(other.gameObject);
         }
     }
 

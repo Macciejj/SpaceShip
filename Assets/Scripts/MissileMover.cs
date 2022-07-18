@@ -12,11 +12,6 @@ public class MissileMover : MonoBehaviour
         transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
-
     public int GetDamage()
     {
         return damage;
