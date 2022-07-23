@@ -6,10 +6,11 @@ public class MissileMover : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     [SerializeField] int damage = 1;
+    [SerializeField] Vector2 direction = Vector2.up;
 
     private void FixedUpdate()
     {
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * direction.x, 0, speed * Time.deltaTime * direction.y);
     }
 
     private void OnBecameInvisible()
@@ -23,3 +24,5 @@ public class MissileMover : MonoBehaviour
     }
 
 }
+
+
