@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: health
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7157263711182094806, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: shipType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7240029422229350686, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: m_Radius
       value: 1.73
@@ -186,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 7240029422229350686, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: m_Center.z
       value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095077020291290562, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}

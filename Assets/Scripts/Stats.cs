@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    [SerializeField] ShipType shipType;
     [SerializeField] int health = 5;
 
     
@@ -12,9 +13,18 @@ public class Stats : MonoBehaviour
         MissileMover missileMover = other.GetComponent<MissileMover>();
         if(missileMover != null)
         {
-            TakeDamage(missileMover.GetDamage());
-            Destroy(other.gameObject);
+            if(shipType != missileMover.shipType)
+            {
+                TakeDamage(missileMover.GetDamage());
+                Destroy(other.gameObject);
+            }
+            
         }
+    }
+
+    public ShipType GetShipType()
+    {
+        return shipType;
     }
 
     private void TakeDamage(int damage)
