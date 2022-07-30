@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if(nextSceneIndex <= SceneManager.sceneCount)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        
     }
 }

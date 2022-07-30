@@ -119,6 +119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: missile
+      value: 
+      objectReference: {fileID: 4665092978049294366, guid: f48e943427b89074a9827bd0e50bd9bb, type: 3}
     - target: {fileID: 372828553850167737, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: m_Name
       value: EnemyShip3

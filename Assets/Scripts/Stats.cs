@@ -5,9 +5,9 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     [SerializeField] ShipType shipType;
-    [SerializeField] int health = 5;
-
+    public int health = 5;
     
+     
     private void OnTriggerEnter(Collider other)
     {
         MissileMover missileMover = other.GetComponent<MissileMover>();
@@ -31,6 +31,10 @@ public class Stats : MonoBehaviour
     {
         if(health-damage <= 0)
         {
+            if(GetComponent<Player>()!=null)
+            {
+                GetComponent<Player>().Die();
+            }
             Destroy(gameObject);
         }
         else

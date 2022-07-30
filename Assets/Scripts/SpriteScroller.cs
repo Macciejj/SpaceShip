@@ -23,10 +23,11 @@ public class SpriteScroller : MonoBehaviour
         transform.localPosition += scrollSpeed * Vector3.back * Time.deltaTime;
         if (PassedEdge())
         {
-            moveRightSpriteToTheOppositeEdge();
+            MoveRightSpriteToTheOppositeEdge();
         }
 
     }
+
     private void CalculateEdges()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,7 +35,7 @@ public class SpriteScroller : MonoBehaviour
         botEdge = transform.position.z - spriteRenderer.bounds.extents.z;
     }
 
-    private void moveRightSpriteToTheOppositeEdge()
+    private void MoveRightSpriteToTheOppositeEdge()
     {
         if(scrollSpeed>0)
         {
