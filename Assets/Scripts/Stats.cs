@@ -31,11 +31,10 @@ public class Stats : MonoBehaviour
     {
         if(health-damage <= 0)
         {
-            if(GetComponent<Player>()!=null)
+            if(GetComponent<IKillable>()!=null)
             {
-                GetComponent<Player>().Die();
-            }
-            Destroy(gameObject);
+                GetComponent<IKillable>().Die();
+            }           
         }
         else
         {

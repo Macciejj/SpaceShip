@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour
         if(nextSceneIndex <= SceneManager.sceneCount)
         {
             SceneManager.LoadScene(nextSceneIndex);
+        } 
+        else
+        {
+            SceneManager.LoadScene(1);
         }
         
     }

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveBetweePoints : MonoBehaviour
+public class EnemyMover : MonoBehaviour
 {
-    private Transform startMarker, endMarker;
-    public Transform[] waypoints;
+    [SerializeField] private Transform startMarker, endMarker;
+    [SerializeField] public Transform[] waypoints;
     [SerializeField] float speed = 5;
-    float journeyLength;
-    float startTime;
+    private float journeyLength;
+    private float startTime;
 
     int currentStartPoint;
     void Start()
@@ -24,6 +24,11 @@ public class MoveBetweePoints : MonoBehaviour
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
     }
     void Update()
+    {
+        Move();
+    }
+
+    private void Move()
     {
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;

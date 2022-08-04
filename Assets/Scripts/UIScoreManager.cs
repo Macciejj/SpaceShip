@@ -6,15 +6,16 @@ using TMPro;
 public class UIScoreManager : MonoBehaviour
 {   
     [SerializeField] TextMeshProUGUI scoreText;
-    
-    void Start()
-    {
-        
-    }
+    private int score = 0;
+    public int Score { get { return score; } set { score = value; } }
 
-    // Update is called once per frame
     void Update()
     {
-        scoreText.text = 2.ToString();
+        UpdateScore();
+    }
+
+    public void UpdateScore()
+    {
+        scoreText.text = score.ToString();
     }
 }
