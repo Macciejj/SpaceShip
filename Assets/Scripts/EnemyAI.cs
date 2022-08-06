@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     private Shooter shooter;
+    private Vector3 currentPosition;
+    private Vector3 lastPosition;
     private void Awake()
     {
         shooter = GetComponent<Shooter>();
@@ -13,6 +15,12 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shooter.Fire(true);
+        currentPosition = transform.position;
+        if(currentPosition == lastPosition)
+        {
+            shooter.Fire(true);
+        }
+        
+        lastPosition = currentPosition;
     }
 }

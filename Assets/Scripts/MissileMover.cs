@@ -16,8 +16,6 @@ public class MissileMover : MonoBehaviour
 
         if(shipType == ShipType.enemy && player != null)
         {
-            Vector3 direction3D = player.transform.position - transform.position;
-            direction = new Vector2(direction3D.x, direction3D.z);
             direction.Normalize();
         }
     }

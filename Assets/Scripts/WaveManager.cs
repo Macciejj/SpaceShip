@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] wavePrefab;
-    UICountdown uICountdown;
+    [SerializeField] GameObject[] wavePrefabs;
+    [SerializeField] List<GameObject> waves = new List<GameObject>();
+    private UICountdown uICountdown;
+
+    private void Awake()
+    {
+        foreach (var item in wavePrefabs)
+        {
+            waves.Add(Instantiate(item, transform.position, Quaternion.identity));
+        }
+        foreach (var item in waves)
+        {
+            item.SetActive(false);
+        }
+        
+    }
 
     private void Start()
     {
         uICountdown = FindObjectOfType<UICountdown>();
     }
 
-    void Update()
+    private void Update()
     {       
        if(uICountdown.IsCountdownFinished) SpawnWave();
     }
@@ -21,7 +35,8 @@ public class WaveManager : MonoBehaviour
     {      
         if (IsOnlyPlayerOnBoard())
         {
-            Instantiate(wavePrefab[Random.Range(0, wavePrefab.Length)], transform.position, Quaternion.identity);
+            int randomNumber = Random.Range(0, wavePrefabs.Length);
+            waves[randomNumber].SetActive(true);           
         }
     }
 
