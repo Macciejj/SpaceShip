@@ -15,18 +15,10 @@ public class Mover
     {
         this.transform = transform;
         this.speed = speed;
-        SetBounds(3f);
-    }
-
-    public void SetBounds(float moveAreaBounds = 0)
-    {
-        Camera camera;
-        camera = Camera.main;
-        float cameraToPlayerDistance = Vector3.Distance(new Vector3(0, moveAreaBounds, 0), camera.transform.position);
-
-        minScreenBounds = camera.ScreenToWorldPoint(new Vector3(0, 0, cameraToPlayerDistance));
-        maxScreenBounds = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, cameraToPlayerDistance));
-    }
+        minScreenBounds = ScreenBounds.MinScreenBounds;
+        maxScreenBounds = ScreenBounds.MaxScreenBounds;
+        
+    } 
 
     public void Move(Vector2 direction)
     {
@@ -41,5 +33,14 @@ public class Mover
             moveVector.z = 0;
         }
         transform.Translate(moveVector);
+    }
+
+    public Vector3 GetScreenMaxBounds()
+    {
+        return maxScreenBounds;
+    }
+    public Vector3 GetScreenMinBounds()
+    {
+        return minScreenBounds;
     }
 }

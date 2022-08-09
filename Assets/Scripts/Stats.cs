@@ -10,13 +10,13 @@ public class Stats : MonoBehaviour
      
     private void OnTriggerEnter(Collider other)
     {
-        MissileMover missileMover = other.GetComponent<MissileMover>();
+        Missile missileMover = other.GetComponent<Missile>();
         if(missileMover != null)
         {
             if(shipType != missileMover.shipType)
             {
                 TakeDamage(missileMover.GetDamage());
-                Destroy(other.gameObject);
+                ObjectPool.Instance.ReturnToPool(missileMover);
             }
             
         }
