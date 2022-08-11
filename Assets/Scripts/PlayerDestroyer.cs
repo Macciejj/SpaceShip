@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour, IKillable
+public class PlayerDestroyer : MonoBehaviour, IKillable
 {
    public void Die()
     {

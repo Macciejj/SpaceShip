@@ -35,12 +35,4 @@ public class Mover
         transform.Translate(moveVector);
     }
 
-    public Vector3 GetScreenMaxBounds()
-    {
-        return maxScreenBounds;
-    }
-    public Vector3 GetScreenMinBounds()
-    {
-        return minScreenBounds;
-    }
 }

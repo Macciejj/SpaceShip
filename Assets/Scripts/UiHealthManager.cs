@@ -7,11 +7,11 @@ using System.Linq;
 public class UiHealthManager : MonoBehaviour
 {
     [SerializeField] Image[] hearts;
-    private Player player;
+    private PlayerDestroyer player;
     
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerDestroyer>();
         
     }
 

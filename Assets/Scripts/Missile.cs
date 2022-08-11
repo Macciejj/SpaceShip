@@ -24,7 +24,7 @@ public class Missile : MonoBehaviour
         return (transform.position.x < ScreenBounds.MinScreenBounds.x ||
             transform.position.x > ScreenBounds.MaxScreenBounds.x ||
             transform.position.z < ScreenBounds.MinScreenBounds.z ||
-            transform.position.z > ScreenBounds.MaxScreenBounds.x);
+            transform.position.z > ScreenBounds.MaxScreenBounds.z);
        
     }
 

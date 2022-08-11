@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         controlAction = new ControlActions();
         move = controlAction.player.movement;
-        fire = controlAction.player.fire;
+       // fire = controlAction.player.fire;
         mover = new Mover(transform, speed);
         shooter = GetComponent<Shooter>();
     }
@@ -27,19 +27,20 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {   
         move.Enable();
-        fire.Enable();
+        //fire.Enable();
     }
 
     private void Update()
     {
         mover.Move(move.ReadValue<Vector2>());
-        shooter.Fire(fire.ReadValue<float>() > 0.1f);
+        shooter.Fire(true);
+        //shooter.Fire(fire.ReadValue<float>() > 0.1f);
     }
 
     private void OnDisable()
     {
         move.Disable();
-        fire.Disable();
+        //fire.Disable();
     }
     
 }

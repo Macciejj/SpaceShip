@@ -17,13 +17,17 @@ public class Shooter : MonoBehaviour
             if (Time.time > nextShot)
             {
                 if (rateOfFire != 0) nextShot = Time.time + 1 / rateOfFire;
-                var missile = ObjectPool.Instance.GetMissile();
-                missile.shipType = GetComponent<Stats>().GetShipType();
-                missile.direction = missile.shipType == ShipType.player ? Vector2.up : Vector2.down;
-                missile.gameObject.SetActive(true);
-                missile.transform.position = missileSpawnPoint.position;
+                CreateMissile();
             }
         }
     }
 
+    private void CreateMissile()
+    {
+        var missile = ObjectPool.Instance.GetMissile();
+        missile.shipType = GetComponent<Stats>().GetShipType();
+        missile.direction = missile.shipType == ShipType.player ? Vector2.up : Vector2.down;
+        missile.gameObject.SetActive(true);
+        missile.transform.position = missileSpawnPoint.position;
+    }
 }

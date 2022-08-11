@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IKillable
+public class EnemyDestroyer : MonoBehaviour, IKillable
 {
     [SerializeField] int pointsForPlayerWhenDie = 1;
     private UIScoreManager uIScoreManager;
