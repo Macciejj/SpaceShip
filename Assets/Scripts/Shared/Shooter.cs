@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] float rateOfFire = 1f;
-    [SerializeField] Transform missileSpawnPoint;
+    [SerializeField] List<Transform> missileSpawnPoints = new List<Transform>();
     [SerializeField] GameObject missile;
 
     private float nextShot = 0;
@@ -17,13 +17,18 @@ public class Shooter : MonoBehaviour
             if (Time.time > nextShot)
             {
                 if (rateOfFire != 0) nextShot = Time.time + 1 / rateOfFire;
-                CreateMissile();
+                foreach (var missileSpawnPoint in missileSpawnPoints)
+                {
+                    CreateMissile(missileSpawnPoint);
+                }
+                
             }
         }
     }
 
-    private void CreateMissile()
+    private void CreateMissile(Transform missileSpawnPoint)
     {
+        
         var missile = ObjectPool.Instance.GetMissile();
         missile.shipType = GetComponent<Stats>().GetShipType();
         missile.direction = missile.shipType == ShipType.player ? Vector2.up : Vector2.down;
