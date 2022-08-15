@@ -6,8 +6,8 @@ public class Stats : MonoBehaviour
 {
     [SerializeField] ShipType shipType;
     public int health = 5;
-    
-     
+    public bool hasShild = false;
+
     private void OnTriggerEnter(Collider other)
     {
         Missile missileMover = other.GetComponent<Missile>();
@@ -27,19 +27,24 @@ public class Stats : MonoBehaviour
         return shipType;
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        if(health-damage <= 0)
+        if(!hasShild)
         {
-            if(GetComponent<IKillable>()!=null)
+            if (health - damage <= 0)
             {
-                GetComponent<IKillable>().Die();
-            }           
+                if (GetComponent<IKillable>() != null)
+                {
+                    GetComponent<IKillable>().Die();
+                }
+            }
+            else
+            {
+                health -= damage;
+            }
         }
-        else
-        {
-            health -= damage;
-        }
+        hasShild = false;
+       
     }
     
 }

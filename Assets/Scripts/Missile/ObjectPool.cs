@@ -24,7 +24,7 @@ public class ObjectPool : MonoBehaviour
 
     private void AddMissile()
     {
-        var missile = Instantiate(missilePrefab);
+        var missile = Instantiate(missilePrefab, transform);
         missile.gameObject.SetActive(false);
         missiles.Enqueue(missile);
     }

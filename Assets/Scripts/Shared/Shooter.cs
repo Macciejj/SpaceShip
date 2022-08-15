@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] float rateOfFire = 1f;
+    public float RateOfFire { get { return rateOfFire;  } set { rateOfFire = value; } }
     [SerializeField] List<Transform> missileSpawnPoints = new List<Transform>();
     [SerializeField] GameObject missile;
 

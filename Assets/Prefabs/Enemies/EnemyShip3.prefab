@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -6871108012734579168, guid: 4a893f4d6af9e5643ae6c40aded4ab2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +92,15 @@ PrefabInstance:
     - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: missile
       value: 
-      objectReference: {fileID: 638051617942028232, guid: 70bd0dca17bd527469b2f9891fd5a36b, type: 3}
+      objectReference: {fileID: 5204592387289094837, guid: 0ef1987f8c72bca4b849f18b6bae6323, type: 3}
+    - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: missileSpawnPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: missileSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1083742775961220656}
     - target: {fileID: 372828553850167737, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: m_Name
       value: EnemyShip3
@@ -173,10 +181,19 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9095077020291290562, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
 --- !u!4 &8992191529299024645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1006730992669604087, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+  m_PrefabInstance: {fileID: 8156597322547438578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1083742775961220656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9095077020291290562, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
   m_PrefabInstance: {fileID: 8156597322547438578}
   m_PrefabAsset: {fileID: 0}
