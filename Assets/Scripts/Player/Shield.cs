@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] float attackSpeedMultiplier;
-
     private void OnTriggerEnter(Collider other)
     {
         Stats player = other.gameObject.GetComponent<Stats>();

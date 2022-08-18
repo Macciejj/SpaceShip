@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buff : MonoBehaviour
+public class HealthBuff : MonoBehaviour
 {
-    [SerializeField] int multiplier;
-    [SerializeField] int duration;
+
+    [SerializeField] int Health = 1;
 
     private void OnTriggerEnter(Collider other)
     {
-        Shooter player = other.gameObject.GetComponent<Shooter>();
+        Stats player = other.gameObject.GetComponent<Stats>();
         if (player != null && player.CompareTag("Player"))
         {
-            player.IncreaseAttackspeedForTime(multiplier, duration);
+            player.IncreaseHealth(Health);
             Destroy(gameObject);
         }
+
     }
 }

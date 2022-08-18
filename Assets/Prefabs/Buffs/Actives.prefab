@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5544126732105362129
+--- !u!1 &2854813547951980554
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5544126732105362134}
-  - component: {fileID: 5544126732105362133}
-  - component: {fileID: 5544126732105362132}
+  - component: {fileID: 4715016969446679393}
+  - component: {fileID: 634023624042573830}
   m_Layer: 0
-  m_Name: buff
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5544126732105362134
+--- !u!4 &4715016969446679393
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126732105362129}
+  m_GameObject: {fileID: 2854813547951980554}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.4, y: 0, z: -15.2}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5544126733555825910}
+  m_Father: {fileID: 1402399473404085275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!212 &5544126732105362133
+--- !u!212 &634023624042573830
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126732105362129}
+  m_GameObject: {fileID: 2854813547951980554}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,33 +70,19 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 5198208495617807317, guid: 57601ae69fc05ca4390b43b0214a3832, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -8085032501208905695, guid: 57601ae69fc05ca4390b43b0214a3832, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.13, y: 0.14}
+  m_Size: {x: 0.08, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &5544126732105362132
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126732105362129}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.0633772
-  m_Height: 0.14515275
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.005190997, z: 4.420904e-17}
---- !u!1 &5544126733555825908
+--- !u!1 &5028614584093956902
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,52 +90,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5544126733555825910}
-  - component: {fileID: 5544126733555825909}
-  - component: {fileID: 2127878393871475333}
-  - component: {fileID: 7893743959846338703}
+  - component: {fileID: 1402399473404085275}
+  - component: {fileID: 1271969620948919845}
+  - component: {fileID: -8735014540811373309}
+  - component: {fileID: 1824033603748864451}
+  - component: {fileID: -7161644816822349063}
   m_Layer: 0
-  m_Name: AttackSpeedBuff
+  m_Name: Actives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5544126733555825910
+--- !u!4 &1402399473404085275
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126733555825908}
+  m_GameObject: {fileID: 5028614584093956902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5544126732105362134}
+  - {fileID: 4715016969446679393}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5544126733555825909
+--- !u!114 &1271969620948919845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126733555825908}
+  m_GameObject: {fileID: 5028614584093956902}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6813f7388bd08714d9d857d6d225c2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fallingSpeed: 10
---- !u!54 &2127878393871475333
+--- !u!54 &-8735014540811373309
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126733555825908}
+  m_GameObject: {fileID: 5028614584093956902}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -160,16 +146,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7893743959846338703
+--- !u!136 &1824033603748864451
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028614584093956902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7161644816822349063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544126733555825908}
+  m_GameObject: {fileID: 5028614584093956902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46519578a2f3ac54c9e8aa98f543be7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 10e274d8f6afad744b71eb0dc6270e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeedMultiplier: 2
+  spawnProbability: 1

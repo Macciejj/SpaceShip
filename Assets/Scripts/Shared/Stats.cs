@@ -5,8 +5,12 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     [SerializeField] ShipType shipType;
-    public int health = 5;
+
+    [SerializeField] int health = 10;
+    public int Health { get { return health; }}
     public bool hasShild = false;
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +35,7 @@ public class Stats : MonoBehaviour
     {
         if(!hasShild)
         {
-            if (health - damage <= 0)
+            if (Health - damage <= 0)
             {
                 if (GetComponent<IKillable>() != null)
                 {
@@ -45,6 +49,12 @@ public class Stats : MonoBehaviour
         }
         hasShild = false;
        
+    }
+
+    public void IncreaseHealth(int value)
+    {
+        health += value;
+        if (Health > 10) health = 10;
     }
     
 }

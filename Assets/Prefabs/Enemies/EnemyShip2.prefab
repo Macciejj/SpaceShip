@@ -154,6 +154,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 638051617942028232, guid: 142d1643c7b2c7d45b77ce5f83120033, type: 3}
     - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: rateOfFire
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: missileSpawnPoints.Array.size
       value: 2
       objectReference: {fileID: 0}

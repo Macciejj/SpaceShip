@@ -5,8 +5,10 @@ using UnityEngine;
 public class MeteorsAndBuffsSpawner : MonoBehaviour
 {
 
-    [SerializeField] GameObject[] prefabs;
+    [SerializeField] Probability[] prefabs;
     [SerializeField] int timeBetweenSpawns = 1;
+
+    private List<Probability> prefabsWithWage = new List<Probability>();
     private Vector3 spawnPosition;
 
     private float nextSpawn = 0f;
@@ -16,6 +18,18 @@ public class MeteorsAndBuffsSpawner : MonoBehaviour
         DelaySpawn();
     }
 
+    private Probability RandomIndex()
+    {
+        foreach (var item in prefabs)
+        {
+            for (int i = 0; i < item.GetComponent<Probability>().spawnProbability; i++)
+            {
+                prefabsWithWage.Add(item);
+            }         
+        }
+        return prefabsWithWage[Random.Range(0,prefabsWithWage.Count)];
+    }
+
     public void DelaySpawn()
     {
         if (Time.time > nextSpawn)
@@ -23,8 +37,8 @@ public class MeteorsAndBuffsSpawner : MonoBehaviour
             if (timeBetweenSpawns != 0) nextSpawn = Time.time + (1 / timeBetweenSpawns);
             int randomZPosition = Random.Range(-18, 17);           
             spawnPosition = new Vector3(randomZPosition, 0, ScreenBounds.MaxScreenBounds.z);
-            int randomIndex = Random.Range(0, prefabs.Length - 1);
-            Instantiate(prefabs[randomIndex], spawnPosition, Quaternion.identity, transform);
+
+            Instantiate(RandomIndex(), spawnPosition, Quaternion.identity, transform);
         }
     }
 

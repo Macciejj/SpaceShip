@@ -36,4 +36,18 @@ public class Shooter : MonoBehaviour
         missile.gameObject.SetActive(true);
         missile.transform.position = missileSpawnPoint.position;
     }
+
+    public void IncreaseAttackspeedForTime(int multiplier, int time)
+    {
+        StartCoroutine(IncreaseAttackspeedDelay(multiplier, time));
+    }
+
+    private IEnumerator IncreaseAttackspeedDelay(int multiplier,int seconds)
+    {
+        RateOfFire *= multiplier;
+        yield return new WaitForSeconds(seconds);
+        RateOfFire /= multiplier;
+        yield return null;
+    }
+
 }
