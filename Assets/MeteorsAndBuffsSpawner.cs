@@ -13,7 +13,7 @@ public class MeteorsAndBuffsSpawner : MonoBehaviour
 
     private float nextSpawn = 0f;
 
-    void Update()
+    private void Update()
     {
         DelaySpawn();
     }
@@ -35,8 +35,8 @@ public class MeteorsAndBuffsSpawner : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             if (timeBetweenSpawns != 0) nextSpawn = Time.time + (1 / timeBetweenSpawns);
-            int randomZPosition = Random.Range(-18, 17);           
-            spawnPosition = new Vector3(randomZPosition, 0, ScreenBounds.MaxScreenBounds.z);
+            int randomXPosition = Random.Range(-18, 17);           
+            spawnPosition = new Vector3(randomXPosition, 0, ScreenBounds.MaxScreenBounds.z);
 
             Instantiate(RandomIndex(), spawnPosition, Quaternion.identity, transform);
         }

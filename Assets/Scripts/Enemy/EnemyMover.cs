@@ -17,11 +17,6 @@ public class EnemyMover : MonoBehaviour
         currentStartPoint = 0;
         SetPoints();
     }
-    
-    private void Update()
-    {
-        Move();
-    }
 
     private void OnDrawGizmos()
     {
@@ -32,7 +27,7 @@ public class EnemyMover : MonoBehaviour
 
     }
 
-    private void Move()
+    public void Move()
     {
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
