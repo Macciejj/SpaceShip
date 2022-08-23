@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 2
-  duration: 2
+  duration: 3
 --- !u!1001 &7671596978343036349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,7 +23,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7161644816822349063, guid: 202d36ef7d57e4248bb5be8a6808c3ce, type: 3}
       propertyPath: spawnProbability
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 634023624042573830, guid: 202d36ef7d57e4248bb5be8a6808c3ce, type: 3}
       propertyPath: m_Sprite

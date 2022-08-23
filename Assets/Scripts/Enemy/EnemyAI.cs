@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
         currentPosition = transform.position;
         if(currentPosition == lastPosition)
         {
-            shooter.Fire(true);
+           if(shooter!= null) shooter.Fire(true);
         }
         
         lastPosition = currentPosition;

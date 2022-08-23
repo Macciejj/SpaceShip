@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5222166280951210495}
   - component: {fileID: 4515386830154814078}
+  - component: {fileID: 1142517569}
+  - component: {fileID: 1142517568}
   m_Layer: 0
   m_Name: SpaceShooterAssetPack_Ships_23
   m_TagString: Untagged
@@ -82,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1142517569
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150917004351947447}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c10e0595a7009d1459cfeb07615b215d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1142517568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150917004351947447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e4ebfcaf6cd4d47bac2d81b5a07888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2989283367167693088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,6 +122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1742784631675282388, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
+      propertyPath: dieAnimation
+      value: 
+      objectReference: {fileID: 1142517568}
     - target: {fileID: 795211908, guid: 57dbc57e90d17f3438b1ad89f1c44ddb, type: 3}
       propertyPath: rateOfFire
       value: 1.5

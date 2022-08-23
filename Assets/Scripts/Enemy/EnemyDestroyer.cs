@@ -6,16 +6,24 @@ public class EnemyDestroyer : MonoBehaviour, IKillable
 {
     [SerializeField] int pointsForPlayerWhenDie = 1;
     private UIScoreManager uIScoreManager;
+    [SerializeField] DieAnimation dieAnimation;
 
     private void Awake()
     {
+        //dieAnimation = FindObjectOfType<DieAnimation>();
         uIScoreManager = FindObjectOfType<UIScoreManager>();
     }
 
     public void Die()
     {
+        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+
         uIScoreManager.Score += pointsForPlayerWhenDie;
-        Destroy(gameObject);
+        dieAnimation.TriggerDieAnimation();
+        Destroy(gameObject, 1.183f);
     }
+
+
 
 }

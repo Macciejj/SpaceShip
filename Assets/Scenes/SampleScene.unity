@@ -727,8 +727,8 @@ MonoBehaviour:
   prefabs:
   - {fileID: 8568737339253299012, guid: 52ab08fca2e42284e9b46887e674a813, type: 3}
   - {fileID: 6837231285809601780, guid: 103d677beb15ca84a812536261f58e0f, type: 3}
-  - {fileID: 6837231285809601780, guid: 103d677beb15ca84a812536261f58e0f, type: 3}
   - {fileID: -5668035510326061143, guid: fde88b7a6f173da4281dc0ee499364ec, type: 3}
+  - {fileID: 1836695273994708669, guid: 7438dd17dd9f24d4fb628eedb58c6800, type: 3}
   timeBetweenSpawns: 1
 --- !u!1 &696981008
 GameObject:
@@ -1591,6 +1591,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193084151}
   m_CullTransparentMesh: 1
+--- !u!1 &1249451658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249451659}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1249451659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249451658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1250601578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1746,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 134622830}
+--- !u!1 &1330393734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330393735}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330393735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330393734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1, y: 0, z: -3.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349330278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2075,36 @@ Transform:
   m_Father: {fileID: 1991229001}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1788507637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788507638}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1788507638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788507637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.91, y: 0, z: -2.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806472832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2233,7 @@ MonoBehaviour:
   - {fileID: 8544671636856834450, guid: b862c6114ec2cea4e8ffd5c3175ce9a3, type: 3}
   - {fileID: 2039307950026207946, guid: 828f7b19178fcc249be65d3cf183ce00, type: 3}
   - {fileID: 8230001305962926751, guid: a86ce995e92d1c040a5b84df1cb34d99, type: 3}
+  - {fileID: 8230001305962926751, guid: 4a5950dedb36b8145a47ccf6c5bd5bdc, type: 3}
 --- !u!4 &1868875921
 Transform:
   m_ObjectHideFlags: 0
@@ -2356,7 +2447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f3585e3f3ecd5438da7ab0237b4eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 2
+  rateOfFire: 19.93
   missileSpawnPoints:
   - {fileID: 1785864819}
   missile: {fileID: 638051617942028232, guid: 70bd0dca17bd527469b2f9891fd5a36b, type: 3}
@@ -2374,7 +2465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipType: 2
   health: 10
-  hasShild: 0
+  hasShild: 1
 --- !u!136 &1991229004
 CapsuleCollider:
   m_ObjectHideFlags: 0
